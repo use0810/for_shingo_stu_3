@@ -1,0 +1,32 @@
+<html>
+  <h1>
+    3回目の授業
+  </h1>
+  <p1>
+
+<div>
+  <button onclick="copyToClipboard()">コピー</button>
+  <p id="copyText">コピーしたいテキスト</p>
+</div>
+
+<style>
+
+  .タイトル {
+    text-align: center;
+  }
+</style>
+
+<script>
+  function copyToClipboard() {
+  // コピーしたいテキストを取得
+  var text = document.getElementById("copyText").textContent;
+
+  // テキストを一時的に格納するinput要素を作成
+  var clipboardText = text;
+  navigator.clipboard.writeText(clipboardText);
+
+  // コピー完了のメッセージを表示（任意）
+  alert("コピーしました！");
+}
+</script>
+</html>
