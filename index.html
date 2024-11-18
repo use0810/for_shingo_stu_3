@@ -1,32 +1,615 @@
 <html>
-  <h1>
-    3回目の授業
-  </h1>
-  <p1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>新郷中学校プログラミング</title>
 
-<div>
-  <button onclick="copyToClipboard()">コピー</button>
-  <p id="copyText">コピーしたいテキスト</p>
-</div>
+    <link rel="stylesheet" href="shingo.css" />
+  </head>
+  <body>
+    <div class="title_container">
+      <h1 class="title">新郷中学校プログラミング教室</h1>
+    </div>
+    <div class="container">    
+      <!-- <div class="title_container">
+        <span class="dec1"></span>
+        <span class="dec2"></span>
+        <h1 class="title">
+          新郷中学校プログラミング
+        </h1>
+      </div> -->
 
-<style>
+      <h2 class="midashi">第三回、レシピ画面を作ってみよう！</h2>
+      <!-- <h3 class="midashi2">【 振り返り 】</h3> -->
+      <p>皆さんはここまでの授業で、プログラミングを通じ"考える力"を高めてきました。</p>
+      <p>今日の授業では皆さんの力でWEBページ制作にチャレンジしてみましょう！
+      </p>
 
-  .タイトル {
-    text-align: center;
-  }
-</style>
+  
 
-<script>
-  function copyToClipboard() {
-  // コピーしたいテキストを取得
-  var text = document.getElementById("copyText").textContent;
+      <div class="kadai_wrapper ">
+        <h3 class="kadai_title">【　課題　】</h3>
+        <span class="kadai kadai1">2~4人のチームを作る</span>
+        <div><img src="arrow.svg"></div>
+        <span class="kadai kadai2">作業の分担を決める</span>
+        <div><img src="arrow.svg"></div>
 
-  // テキストを一時的に格納するinput要素を作成
-  var clipboardText = text;
-  navigator.clipboard.writeText(clipboardText);
+        <span class="kadai kadai3">
+          <span style="text-align: center;display: block;">HTMLとCSSを使って</span>
+          <span style="display:block;">Webページを作ってみよう</span>
+        </span>
 
-  // コピー完了のメッセージを表示（任意）
-  alert("コピーしました！");
+        <div><img src="arrow.svg"></div>
+        <span class="kadai kadai4">余裕があればオリジナリティを出そう！</span>
+      </div>
+
+      <h2></h2>
+
+      <p class="hasen"> ------------------ 　見本　 ------------------</p>
+
+      <div class="レシピページ">
+        <h1 class="タイトル">せんべい汁を作ろう</h1>
+        <p class="氏名">番　氏　名</p>
+
+        <h2 class="見出し">１．ねらい</h2>
+        <div>
+          <p>（１）青森県南の郷土料理『せんべい汁』の作り方を覚える。</p>
+          <p>（２）野菜や肉の基本的な切り方を身に付ける。</p>
+          <p>（３）自分たちで味付けをする。</p>
+        </div>
+        <h2 class="見出し">２．材料</h2>
+        <div class="材料セクション">
+          <p class="材料">・せんべい</p>
+          <p class="材料">・にんじん</p>
+          <p class="材料">・ごぼう</p>
+          <p class="材料">・キャベツ</p>
+          <p class="材料">・しめじ</p>
+          <p class="材料">・長ねぎ</p>
+          <p class="材料">・糸こんにゃく</p>
+          <p class="材料">・鶏肉（１枚弱）</p>
+        </div>
+        <div class="材料セクション">
+          <p class="調味料">・粉末だし（８ｇ ） </p>
+          <p class="調味料">・しょう油（大２）</p>
+          <p class="調味料">・みりん（大２）</p>
+          <p class="調味料">・塩（茶さじ１） </p>
+        </div>
+        <div class="材料セクション">
+          <p class="その他">・水（３００ｍｌ×４）</p>
+        </div>
+
+        <h2 class="見出し">３．準備</h2>
+        <div class="準備セクション">
+          <p>・にんじん（短冊切り）</p>
+          <p>・ごぼう（ささがき）※時間がかかるので授業前に切る。</p>
+          <p>・キャベツ（２ｃｍ幅のざく切り）</p>
+          <p>・しめじ（石づきを切る）済</p>
+          <p>・長ねぎ（斜め切り）</p>
+          <p>・糸こんにゃく（結び目を切る）済</p>
+          <p>・鶏肉（一口大）</p>
+        </div>
+
+        <h2 class="見出し">４．作り方</h2>
+        <div class="作り方セクション">
+          <p>①鍋に水、ごぼう、にんじん、しめじ、鶏肉を入れて火にかける。</p>
+          <p>②沸騰したらキャベツ、粉末だし、調味料を入れてさらに煮る。</p>
+          <p>※糸こんは鍋に入っている。</p>
+          <p>③味見をする。</p>
+          <p>④味が薄い場合は塩、しょう油で調整する。</p>
+          <p>⑤せんべいと長ねぎを入れ、さらに煮る。</p>
+          <p>⑥盛り付けをする。</p>
+        </div>
+
+        <h2 class="見出し">５．分担</h2>
+        <div class="分担セクション">
+          <p class="分担">鶏肉</p>
+          <p class="分担">ごぼう</p>
+          <p class="分担">にんじん</p>
+          <p class="分担">キャベツ</p>
+          <p class="分担">長ねぎ</p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担">水計量</p>
+          <p class="分担">調味料計量</p>
+          <p class="分担">盛り付け</p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+          <p class="分担"></p>
+        </div>
+        <p>※片づけは全員で行う。</p>
+      </div>
+
+      <p class="hasen"> ------------------ 見本終了 ------------------</p>
+
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>役割分担ってどうやればいいんだろう？</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>HTMLとCSSで、それぞれのやれそうなことで分担してもいいし、<br>ページを区切ってここからここまでは〇〇さんの担当っていう風に分けるのもありだよ。<br>どちらにしても、必ず分からないところが出てきたり、作業量に差が出てくるから、みんなで手伝いながら作業をしていこう。</p>
+        </div>
+      </div>
+      <hr>
+      <h2 style="text-align: center;">今日使うCSS</h2>
+
+      <h3 style="text-align: center;"> height、width</h3>
+      <div class="css_q_container">
+        <div class="css_qa">
+          <p class="css_ex">高さ・横幅を変えたい</p>
+          <div><img src="right_arrow.svg"></div>
+          <p class="css_ex">height=　 %(px);<br>width=　 %(px);</p>
+        </div>
+      </div>
+      <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="NWQVKdz" data-pen-title="Untitled" data-user="jhamimzl-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/jhamimzl-the-reactor/pen/NWQVKdz">
+        Untitled</a> by 湯川聡之 (<a href="https://codepen.io/jhamimzl-the-reactor">@jhamimzl-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>&lt;div&gt;ってなに？</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>HTMLをグループ分けするときにはdivで囲んであげるよ。<br>HTMLのコードが見やすくなるし、CSSでデザインしやすくなるんだ。<br>言葉で言われても難しいと思うから、後で出てくる"雛形"を見てグループ分けの意味を考えてみよう。
+          </p>
+        </div>
+      </div>
+      <div class="qa_container girl">
+        <div class="qa">
+          <div><img src="hatenao.png"></div>
+          <p>classっていうのも気になる！</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>前回idというのを使ったのを覚えてるかな？<br>あれはそのタグに固有の"名前"をつけてあげるものだったよね。<br>classはそのタグの"グループ名"をつけるために記述するんだ。
+          </p>
+        </div>
+      </div>
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>本題の横幅や高さの指定はwidth(ウィドゥス)やheight(ハイト)を使うんだね。</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>横幅を決めるときはwidth、高さを決めるときはheightだよ。
+            <br>指定する単位は、pxと%の2つがある。pxは見たままの実寸。
+            <br>%は自分の親を100%としたときのパーセンテージで指定するんだ。
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3 style="text-align: center;"> padding </h3>
+      <div class="css_q_container">
+        <div class="css_qa">
+          <p class="css_ex">内側の余白が欲しい</p>
+          <div><img src="right_arrow.svg"></div>
+          <p class="css_ex">padding:　 %(px);</p>
+        </div>
+      </div>
+
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>文字がぎゅうぎゅう詰めで見にくいな～</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>そういうときはpadding(パディング)を上手く使おう。内側の全方位の余白を設定するよ。<br>
+            右側の余白だけを設定したいときにはpadding-rightを使うんだ。<br>
+            同じように左側の余白はpadding-left、上はpadding-top、下はpadding-bottomで設定してあげよう。
+          </p>
+        </div>
+      </div>
+      
+      <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="vYowYpV" data-pen-title="Untitled" data-user="jhamimzl-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/jhamimzl-the-reactor/pen/vYowYpV">
+        Untitled</a> by 湯川聡之 (<a href="https://codepen.io/jhamimzl-the-reactor">@jhamimzl-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+     
+      <div class="qa_container girl">
+        <div class="qa">
+          <div><img src="hatenao.png"></div>
+          <p>内側の余白ってことは外側の余白もあるってこと？</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>
+          察しがいいね！ただ外側の余白をやる前に、flexについて学んでいくよ。
+          </p>
+        </div>
+      </div>
+
+
+      <hr>
+      <h3 style="text-align: center;"> display: flex<br>
+        justify-content: center </h3>
+      <div class="css_q_container">
+        <div class="css_qa">
+          <p class="css_ex">左右中央に複数の要素を並べたい</p>
+          <div><img src="right_arrow.svg"></div>
+          <p class="css_ex">display: flex;<br>
+            justify-content: center;</p>
+        </div>
+      </div>
+
+      <div class="qa_container girl">
+        <div class="qa">
+          <div><img src="hatenao.png"></div>
+          <p>HTMLって全部左詰めになっちゃうんだよね、しかもpタグとかdivタグ使うと勝手に改行しちゃうし！<br>このpタグ3つを横並びで表示するにはどうするんだろう？</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>
+          複数のタグを規則正しく並べるときにはflexを使うんだ。<br>display: flex;　justify-content: center;<br>
+          並べ方は色々あるんだけど、今日の授業ではこの2つを使ってね。<br>
+          cssは親のクラスを指定して書いてあげてね。
+          </p>
+        </div>
+      </div>
+      <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="bGXyGOd" data-pen-title="Untitled" data-user="jhamimzl-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/jhamimzl-the-reactor/pen/bGXyGOd">
+        Untitled</a> by 湯川聡之 (<a href="https://codepen.io/jhamimzl-the-reactor">@jhamimzl-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+      <hr>
+
+      <h3 style="text-align: center;"> display: flex<br>
+        justify-content: center　
+        <br>align-items: center </h3>
+
+      <div class="css_q_container">
+        <div class="css_qa">
+          <p class="css_ex">中央にまとめたpタグの中の文字を<br>上下左右中央に配置したい</p>
+          <div><img src="right_arrow.svg"></div>
+          <p class="css_ex">
+            display: flex;<br>
+            justify-content: center;<br>
+            align-items: center;</p>
+        </div>
+      </div>
+
+      <div class="qa_container girl">
+        <div class="qa">
+          <div><img src="hatenao.png"></div>
+          <p>flexで横並びにしたのはいいんだけど、中のpタグの文章は左上のままだから気になるな～</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>
+          中の文章も真ん中に寄せたいってことかな？<br>この場合だと横だけじゃなくて縦も中央にあった方が綺麗かもしれないね。
+          <br>じゃあpタグ自身に　display: flex;　justify-content: center;　align-items: center;　をつけてみよう。<br>align-items: center;　は中の要素を縦に中央に配置してくれるよ。これもdisplay:flex;と一緒に使おう。
+          </p>
+        </div>
+      </div>
+      <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjgqoXm" data-pen-title="flex2" data-user="jhamimzl-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/jhamimzl-the-reactor/pen/JjgqoXm">
+        flex2</a> by 湯川聡之 (<a href="https://codepen.io/jhamimzl-the-reactor">@jhamimzl-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>お～中央になった！でも、先生はflexは親のクラスを指定して書けって言わなかった？これpタグ本体にも書いてるよ？</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>ここがちょっとややこしいんだけど、divタグを部屋、pタグは文章が入った箱だと考えて。一番最初にやったのは、flexで部屋(div)の真ん中に箱(pタグ)を配置したんだ。今やったのは箱(pタグ)の中の文章を箱の真ん中に寄せたってこと。文章にとっての親はpタグってことだね。
+          </p>
+        </div>
+      </div>
+      
+
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>・・・・・・？</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>CSSに慣れてくるとわかるようになるよ！
+            今は真似して作ってみよう！
+          </p>
+        </div>
+      </div>
+
+      <hr>
+      <h3 style="text-align: center;"> margin </h3>
+      <div class="css_q_container">
+        <div class="css_qa">
+          <p class="css_ex">外側の余白を変えたい</p>
+          <div><img src="right_arrow.svg"></div>
+          <p class="css_ex">margin: %(px)</p>
+        </div>
+      </div>
+
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>じゃあ外側の余白の指定、margin(マージン)について話していくよ。
+          </p>
+        </div>
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>えっと、内側の余白指定がpadding(パディング)だったっけ。<br>で、今回が外側の余白だね</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>よく覚えてたね。早速marginの例を見てみよう。
+          </p>
+        </div>
+      </div>
+      <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="zYgQGYQ" data-pen-title="Untitled" data-user="jhamimzl-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/jhamimzl-the-reactor/pen/zYgQGYQ">
+        Untitled</a> by 湯川聡之 (<a href="https://codepen.io/jhamimzl-the-reactor">@jhamimzl-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+      <div class="qa_container">
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>子1のcssに　margin-right: 100px;　と記述してあるね。画面を見ると、子1の右側に100px分の余白ができているよ。
+          </p>
+        </div>
+        <div class="qa">
+          <div><img src="hatena.png"></div>
+          <p>paddingと同じで全方位まとめて設定するときはmargin、一方向ずつ指定するときは<br>
+          margin-top、margin-bottom、margin-left、margin-right<br>
+          を使うのかな。
+          </p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>その通りです！
+          </p>
+        </div>
+      </div>
+      
+      <hr>
+      <h3 style="text-align: center;"> outline </h3>
+      <div class="css_q_container">
+        <div class="css_qa">
+          <p class="css_ex">外枠をつけたい</p>
+          <div><img src="right_arrow.svg"></div>
+          <p class="css_ex">outline: 1px solid black;</p>
+        </div>
+      </div>
+
+      <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBeGdjb" data-pen-title="Untitled" data-user="jhamimzl-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/jhamimzl-the-reactor/pen/qBeGdjb">
+        Untitled</a> by 湯川聡之 (<a href="https://codepen.io/jhamimzl-the-reactor">@jhamimzl-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+      
+      <div class="qa_container girl">
+        <div class="qa">
+          <div><img src="hatenao.png"></div>
+          <p>要素に実線をつけるのは1行でいいんだね！</p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>
+          outlineの中身は「線の太さ」「線のタイプ」「線の色」を指定しているよ。<br>例えば　outline: 5px dotted red;　とするとどうなるかな？時間があったら試してみよう！
+          </p>
+        </div>
+      </div>
+
+      <hr>
+      <h3 style="text-align: center;"> text-align </h3>
+      <div class="css_q_container">
+        <div class="css_qa">
+          <p class="css_ex">単一の要素を左右に寄せたい</p>
+          <div><img src="right_arrow.svg"></div>
+          <p class="css_ex">text-align: left;<br>text-align: center;<br>text-align: right;</p>
+        </div>
+      </div>      
+      <div class="qa_container girl">
+        <div class="qa">
+          <div><img src="hatenao.png"></div>
+          <p>pタグとかh1、h2タグとかを中央や右に寄せたいんだけど<br>
+            1個だけでもdivで囲ってflexにしないとだめですか？<br>
+            あれ、flexで右寄せって習ったかな？
+          </p>
+        </div>
+        <div class="qa">
+          <div><img src="sensei.png"></div>
+          <p>
+          flexでの右寄せは教えていないよ！<br>ただ、要素1つだけの時はflexを使わずに
+          簡単に真ん中や右に寄せることができます。
+          </p>
+        </div>
+      </div>
+      <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="yLmWabz" data-pen-title="text-align" data-user="jhamimzl-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/jhamimzl-the-reactor/pen/yLmWabz">
+        text-align</a> by 湯川聡之 (<a href="https://codepen.io/jhamimzl-the-reactor">@jhamimzl-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+
+      <hr>
+      <h2 style="text-align: center;"> 雛形(テンプレート) </h2>
+      <p style="text-align: center;">HTML</p>
+      <div class="copy_container">
+        <div class="copy_button_wrap">
+          <button class="copy_button">コピー</button>
+        </div>
+        <img class="check" src="check.png">
+        <pre class="copy_text_wrap">
+          <code class="copy_text">
+&lt;div class="レシピページ"&gt;
+  &lt;h1 class="タイトル"&gt;&lt;/h1&gt;
+  &lt;p class="氏名"&gt;&lt;/p&gt;
+
+
+  &lt;h2 class="見出し"&gt;&lt;/h2&gt;
+  &lt;div&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+  &lt;/div&gt;
+
+
+  &lt;h2 class="見出し"&gt;&lt;/h2&gt;
+  &lt;div class="材料セクション"&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+    &lt;p class="材料"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="材料セクション"&gt;
+    &lt;p class="調味料"&gt;&lt;/p&gt;
+    &lt;p class="調味料"&gt;&lt;/p&gt;
+    &lt;p class="調味料"&gt;&lt;/p&gt;
+    &lt;p class="調味料"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="材料セクション"&gt;
+    &lt;p class="その他"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+
+
+  &lt;h2 class="見出し"&gt;&lt;/h2&gt;
+  &lt;div class="準備セクション"&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;・&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;・&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+  &lt;h2 class="見出し"&gt;&lt;/h2&gt;
+  &lt;div class="作り方セクション"&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+  &lt;/div&gt;
+
+
+  &lt;h2 class="見出し"&gt;&lt;/h2&gt;
+  &lt;div class="分担セクション"&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+    &lt;p class="分担"&gt;空白マス&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+          </code>
+        </pre>
+      </div>
+
+
+      <p style="text-align: center;">CSS</p>
+      <div class="copy_container">
+        <div class="copy_button_wrap">
+          <button class="copy_button">コピー</button>
+        </div>
+        <img class="check" src="check.png">
+        <pre class="copy_text_wrap">
+          <code class="copy_text">
+.レシピページ {
+
 }
-</script>
+
+.タイトル {
+
+}
+
+.氏名 {
+
+}
+
+.材料セクション {
+
+}
+
+.材料 {
+
+}
+
+.調味料 {
+
+}
+
+.準備セクション{
+
+}
+
+.作り方セクション {
+
+}
+
+.分担セクション {
+
+}
+
+.分担 {
+
+}
+          </code>
+        </pre>
+      </div>
+
+    </div>
+    <script src="main.js">
+      
+    </script>
+  </body>
 </html>
+
+<hr>
+<div class="page_container">
+  <a class="btn btn_1" href="answer.html">正解ページへ</a>
+  <a class="btn btn_2" href="omake.html">おまけ</a>
+  <a class="btn btn_3" href="omake_src.html">おまけのコード</a>
+</div>

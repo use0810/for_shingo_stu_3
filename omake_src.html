@@ -1,0 +1,208 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>新郷中学校プログラミング</title>
+
+    <link rel="stylesheet" href="shingo.css" />
+  </head>
+  <body>
+    <div class="copy_container">
+      <div class="copy_button_wrap">
+        <button class="copy_button">コピー</button>
+      </div>
+      <img class="check" src="check.png">
+      <pre class="copy_text_wrap">
+        <code class="copy_text">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;シューティングゲーム&lt;/title&gt;
+        &lt;style&gt;
+            html, body ,#game_container{
+                width: 99%;
+                height: 99%;
+            }
+
+            canvas {
+                background: #000;
+                display: block;
+                margin: 0 auto;
+                overflow:hidden;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="game_container"&gt;
+            &lt;canvas id="gameCanvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+
+        &lt;script&gt;
+            window.onload = function() {
+                const canvas = document.getElementById('gameCanvas');
+                const container = document.getElementById('game_container');
+
+                canvas.width = container.clientWidth;
+                canvas.height = container.clientHeight;
+
+                const ctx = canvas.getContext('2d');
+
+                class KeyInput {
+                    constructor() {
+                        this.keysPressed = new Set();
+                        window.addEventListener('keydown', (e) =&gt; {
+                            this.keysPressed.add(e.key);
+                        });
+                        window.addEventListener('keyup', (e) =&gt; {
+                            this.keysPressed.delete(e.key);
+                        });
+                    }
+                    isKeyPressed(key) {
+                        return this.keysPressed.has(key);
+                    }
+                }
+
+                class Player {
+                    constructor(){
+                        this.width = 20;
+                        this.height = 20;
+                        this.x = canvas.width/2-this.width;
+                        this.y = canvas.height-this.height;
+                        this.speed = 3;
+                        this.color = 'blue';
+                        this.bullets = [];
+                        this.isShooting = false;
+                    }
+
+                    draw(ctx) {
+                        ctx.fillStyle = this.color;
+                        ctx.fillRect(this.x, this.y, this.width, this.height);
+                    }
+
+                    update(ctx) {
+                        if (keyInput.isKeyPressed('ArrowLeft') && this.x &gt; 0) {
+                            this.x -= this.speed;
+                        }
+                        if (keyInput.isKeyPressed('ArrowRight') && this.x &lt; canvas.width - this.width) {
+                            this.x += this.speed;
+                        }
+
+                        // ここから弾の処理
+                        if (keyInput.isKeyPressed(' ')) {
+                            if (!this.isShooting) {
+                                this.isShooting = true;
+                                this.bullets.push(new PlayerBullet(this.x, this.y));
+                            }
+                        } else {
+                            this.isShooting = false;
+                        }
+
+                        // 弾の更新と描画
+                        this.bullets.forEach(bullet =&gt; {
+                            bullet.update();
+                            bullet.draw(ctx);
+                        });
+                        // 画面外に出た弾を削除する処理
+                        this.bullets = this.bullets.filter(bullet =&gt; bullet.y &gt; 0);
+                    }
+                }
+
+                class PlayerBullet {
+                    constructor(x, y) {
+                        this.width = 5;
+                        this.height = 10;
+                        this.x = x + 10; // プレイヤーの中心から少しずらして発射
+                        this.y = y;
+                        this.speed = 5;
+                        this.color = 'white';
+                    }
+
+                    draw(ctx) {
+                        ctx.fillStyle = this.color;
+                        ctx.fillRect(this.x, this.y, this.width, this.height);
+                    }
+
+                    update() {
+                        this.y -= this.speed;
+                    }
+                }
+
+
+                class Enemy {
+                    constructor(){
+                        this.width = 20;
+                        this.height = 20;
+                        this.x = Math.random() * (canvas.width - 50);
+                        this.y = 0 - this.height;
+                        this.speed = 1;
+                        this.color = 'orange'
+                    }
+
+                    draw(ctx){
+                        ctx.fillStyle = this.color;
+                        ctx.fillRect(this.x, this.y, this.width, this.height);
+                    }
+
+                    update() {
+                        this.y += this.speed;
+                        if (this.y &gt; canvas.height) {
+                            this.delete = true;
+                        }
+                    }
+                }
+
+                const keyInput = new KeyInput();
+                const player = new Player();
+
+                let enemies = [];
+                const createEnemy = () =&gt;{
+                    const newEnemy = new Enemy();
+                    enemies.push(newEnemy);
+                }
+                setInterval(createEnemy ,1000);
+
+
+                function checkCollisions() {
+                    enemies.forEach((enemy, enemyIndex) =&gt; {
+                        player.bullets.forEach((bullet, bulletIndex) =&gt; {
+                        if (
+                            bullet.x &lt; enemy.x + enemy.width && // 弾の左端が敵の右端より左にある, かつ
+                            bullet.x + bullet.width &gt; enemy.x && // 弾の右端が敵の左端より右にある, かつ
+                            bullet.y &lt; enemy.y + enemy.height && // 弾の上端が敵の下端より上にある, かつ
+                            bullet.y + bullet.height &gt; enemy.y   // 弾の下端が敵の上端より下にある
+                        ) {
+                            enemies.splice(enemyIndex, 1);
+                            player.bullets.splice(bulletIndex, 1);
+                        }
+                        });
+                    });
+                }
+
+                function gameLoop() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    player.draw(ctx);
+                    player.update(ctx);
+                    enemies.forEach(enemy =&gt; {
+                        enemy.draw(ctx);
+                        enemy.update();
+                    });
+                    checkCollisions();
+                    requestAnimationFrame(gameLoop);
+                }
+
+                gameLoop();
+            }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+          
+        </code>
+      </pre>
+    </div>
+    <script src="main.js">
+      
+    </script>
+  </body>
+</html>
